@@ -13,3 +13,18 @@ plus([KA|PA], [KB|PB], [KS|PS]) :-
 
 plus([KA|PA], [KB|PB], [KS|PS]) :- 
   plus(PA, PB, PS), KS is KA + KB.
+
+%RESTA
+
+%caso primer parametro vacio|
+resta_pol([],X,X):- 
+    !.
+%caso segundo parametro vacio
+resta_pol(X,[],X):- 
+    !.
+% caso de todos los parametros llenos
+resta_pol([Uno|A], [Dos|B], [Resp|C]) :-
+   Resp is Uno-Dos,
+   resta_pol(A, B, C).
+  
+%?-resta_pol([5,6],[2,3],X).
